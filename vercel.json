@@ -1,8 +1,0 @@
-{
-    "rewrites": [
-      {
-        "source": "localhost:3000/t",
-        "destination": "https://test-backend-eta-ten.vercel.app"
-      }
-    ]
-  }
