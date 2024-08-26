@@ -36,7 +36,7 @@ const textTraslate = async (text, lang) => {
 const testeUrl = async (req, res) => {
     let text = req.query.text;
     let lang = req.query.lang;
-
+ 
     let textPT = await textTraslate("dog", "pt-BR");
     // console.log(textPT);
     res.json(textPT);
