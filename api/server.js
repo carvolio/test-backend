@@ -10,8 +10,8 @@ app.use(express.json());
 app.use(cors());
 
 const porta = process.env.PORT;
-app.set('view engine', 'ejs');
-app.use(express.static('public'));
+// app.set('view engine', 'ejs');
+// app.use(express.static('public'));
 
 const router = express.Router();
 app.use(router);
@@ -29,7 +29,7 @@ const translator = new deepl.Translator(authKey);
 
 const textTraslate = async (text, lang) => {
     const result = await translator.translateText(text, null, lang, { formality: 'less' })
-    console.log(result.text);
+    // console.log(result.text);
     return result.text;
 };
 
@@ -38,8 +38,10 @@ const testeUrl = async (req, res) => {
     let lang = req.query.lang;
 
     let textPT = await textTraslate(text, lang);
-    
-    res.render('index', { text: textPT });
+    // console.log(textPT);
+    res.json("API gerenciador de tarefas respondendo!");
+    // res.render('index', { text: textPT });
+    // return await textPT;
 };
 router.get("/t", testeUrl);
 

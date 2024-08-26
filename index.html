@@ -5,7 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="background-color: yellow;">
-    
+<body style="background-color: yellow; color: black;">
+    <h1 id="texto"></h1>
 </body>
+<script>
+    const texto = document.getElementById('texto');
+
+    texto.innerHTML = "sdhalsj";
+
+    const urlOpen = 'http://127.0.0.1:3000/t?text=im+fine+my+big+friend&lang=pt-BR';
+
+    
+
+    const bcd = async (texto, urlOpen) => {
+        // e.preventDefault();
+        const abc = await fetch(urlOpen, {
+            method: 'GET',
+            headers: {
+            'Content-type': 'application/json'
+            },
+            // body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(res => {
+            console.log(texto);
+            texto.innerHTML = res;
+        })
+    };
+
+    bcd(texto, urlOpen);
+
+    
+
+</script>
 </html>
