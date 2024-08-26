@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const porta = process.env.PORT;
+const porta = process.env.PORT || 3000;
 // app.set('view engine', 'ejs');
 // app.use(express.static('public'));
 
