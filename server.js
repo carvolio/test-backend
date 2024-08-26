@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 require('dotenv').config();
-const ejs = require('ejs');
+// const ejs = require('ejs');
 const deepl = require('deepl-node');
 const authKey = process.env.API_KEY;
 

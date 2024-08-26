@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node start",
-    "build": "node build"
+    "build": "node "
   },
   "name": "api",
   "version": "1.0.0",
