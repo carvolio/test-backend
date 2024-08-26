@@ -37,9 +37,9 @@ const testeUrl = async (req, res) => {
     let text = req.query.text;
     let lang = req.query.lang;
 
-    let textPT = await textTraslate(text, lang);
+    let textPT = await textTraslate("dog", "pt-BR");
     // console.log(textPT);
-    res.json("API gerenciador de tarefas respondendo!");
+    res.json(textPT);
     // res.render('index', { text: textPT });
     // return await textPT;
 };
