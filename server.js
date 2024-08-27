@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 require('dotenv').config();
-// const ejs = require('ejs');
+const ejs = require('ejs');
 const deepl = require('deepl-node');
 const authKey = process.env.API_KEY;
 
@@ -10,8 +10,8 @@ app.use(express.json());
 app.use(cors());
 
 const porta = process.env.PORT || 3000;
-// app.set('view engine', 'ejs');
-// app.use(express.static('public'));
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
 
 const router = express.Router();
 app.use(router);
@@ -39,8 +39,8 @@ const testeUrl = async (req, res) => {
  
     let textPT = await textTraslate(text, lang);
     // console.log(textPT);
-    res.json(textPT);
-    // res.render('index', { text: textPT });
+    // res.json(textPT);
+    res.render('index', { text: textPT });
     // return await textPT;
 };
 router.get("/t", testeUrl);
